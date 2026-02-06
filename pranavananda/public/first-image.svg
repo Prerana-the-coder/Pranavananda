@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#fff6f0"/>
+  <g transform="translate(600,400)">
+    <circle r="220" fill="#ffd9b3" />
+    <rect x="-240" y="-140" width="480" height="280" rx="20" fill="#fff" stroke="#ff8a00" stroke-width="8" />
+    <text x="0" y="20" font-size="48" font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#ff6a00">Welcome to Pranavananda</text>
+  </g>
+</svg>
