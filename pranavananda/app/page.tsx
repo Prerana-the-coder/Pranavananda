@@ -3,8 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ArrowRight, GraduationCap, Users, BookOpen, Award, Calendar } from "lucide-react";
+import { image } from "framer-motion/client";
 
 const popUp = {
   hidden: { opacity: 0, scale: 0.5, y: 50 },
@@ -13,8 +14,7 @@ const popUp = {
     scale: 1, 
     y: 0,
     transition: {
-      duration: 0.6,
-      ease: "easeOut"
+      duration: 0.6
     }
   },
 };
@@ -36,21 +36,25 @@ const features = [
   {
     icon: GraduationCap,
     title: "Holistic Education",
+    image: "/hostalic.jpg",
     description: "Physical, mental, intellectual, moral, spiritual, social and emotional development.",
   },
   {
     icon: Users,
     title: "Value-Based Learning",
+    image: "/value.jpg",
     description: "Modern education blended with high moral values and strict discipline.",
   },
   {
     icon: BookOpen,
     title: "Modern Facilities",
+    image: "modern%20image.jpg",
     description: "Science & Technology Labs, Smart Classrooms, Library and more.",
   },
   {
     icon: Award,
     title: "Excellence Focused",
+    image: "focused.jpg",
     description: "Preparing responsible, patriotic and value-driven citizens.",
   },
 ];
@@ -59,18 +63,22 @@ const leadership = [
   {
     title: "Chairman",
     name: "Swamy Atmajnanananda",
+    image: "chairman.jpg",
+    
     excerpt:
       "We intend to make Pranavananda International School different from others, where learning is based on experiences and applications.",
   },
   {
     title: "Principal",
     name: "JEEVITENDRA SATI",
+    image: "principal.jpg",
     excerpt:
       "India needs a value education system which inculcates universal values and enriches a student's personality along with academics.",
   },
   {
     title: "Vice Principal",
     name: "SEEMA SATI M.A., B.ED.",
+    image: "vice%20principal.jpg",
     excerpt:
       "Education is the fine‑tuning that brings out perfection in human beings, helping them blossom their full potential.",
   },
@@ -80,33 +88,41 @@ const events = [
   {
     title: "Geeta Chanting Competition",
     date: "Ongoing",
+    image: "geeta.jpg",
     summary:
       "Students showcase the timeless beauty of Bhagavad Gita Shlokas, nurturing discipline, focus and devotion.",
   },
   {
     title: "Annual Day Celebration",
     date: "Completed",
+    image: "annual.jpg",
     summary:
       "11th Annual Day 2025 (NAVODAYAN) celebrated with esteemed guests and joyful student performances.",
   },
   {
     title: "School Excursions",
     date: "Upcoming",
+    image: "excursion.jpg",
     summary:
       "Educational excursions organised for all classes, providing practical exposure beyond the classroom.",
   },
 ];
 
 export default function Home() {
-  const [showPopup, setShowPopup] = useState(true);
+  
 
-  useEffect(() => {
-    const t = setTimeout(() => setShowPopup(false), 3500);
-    return () => clearTimeout(t);
-  }, []);
+  const [showPopup, setShowPopup] = useState(true);
 
   return (
     <div className="space-y-0">
+      <Image
+  src="/first pop image.jpg"
+  alt="Admission poster"
+  width={1000}
+  height={600}
+  style={{ width: "100%", height: "auto", borderRadius: "12px", marginBottom: "20px" }}
+/>
+
       {/* Pop-up Image Section */}
       {showPopup && (
         <section className="fixed inset-0 z-[60] flex items-center justify-center bg-black/30 p-4">
@@ -118,15 +134,16 @@ export default function Home() {
               className="w-full"
             >
               <img
-                src="/first-pop.jpg"
-                alt="Popup media"
+                src="/school1.jpg"
+
+                alt="Admission poster"
                 width={1200}
                 height={800}
                 onError={(e) => {
                   const img = e.currentTarget as HTMLImageElement;
                   if (!img.dataset.fallback) {
                     img.dataset.fallback = "1";
-                    img.src = "/first-image.svg";
+                    img.src = "/images/logo_2.png";
                   }
                 }}
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
@@ -230,11 +247,15 @@ export default function Home() {
                   </span>
                 </div>
 
-                <div className="relative h-64 overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--brand-orange)]/20 via-white to-[var(--brand-orange)]/30">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <GraduationCap className="h-24 w-24 text-[var(--brand-orange)]/30" />
-                  </div>
-                </div>
+               <div className="absolute inset-0">
+                <img
+                 src="/welcome.jpg"
+                 alt="School welcome"
+                 className="w-full h-full object-cover"
+              />
+            </div>
+
+
 
                 <p className="mt-6 text-sm leading-relaxed text-[var(--muted)]">
                   With modern amenities like Science &amp; Technology Labs, Art
@@ -275,7 +296,12 @@ export default function Home() {
                   className="card group"
                 >
                   <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--brand-orange)]/10 text-[var(--brand-orange)] transition-colors group-hover:bg-[var(--brand-orange)] group-hover:text-white">
-                    <feature.icon className="h-6 w-6" />
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="h-12 w-12 object-cover rounded-lg"
+                    />
+
                   </div>
                   <h3 className="mb-2 text-lg font-semibold text-[var(--fg)]">
                     {feature.title}
@@ -428,6 +454,12 @@ export default function Home() {
                   whileHover={{ y: -5 }}
                   className="card flex flex-col h-full"
                 >
+                  <img
+                   src={`/${person.image}`}
+                   alt={person.name}
+                   className="w-20 h-20 rounded-full object-cover mb-4"
+                />
+
                   <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[var(--brand-orange)]">
                     {person.title}
                   </p>
@@ -465,6 +497,12 @@ export default function Home() {
                   whileHover={{ y: -5 }}
                   className="card"
                 >
+                  <img
+                    src={`/${event.image}`}
+                    alt={event.title}
+                    className="w-full h-40 object-cover rounded-xl mb-4"
+                />
+
                   <div className="mb-3 flex items-center justify-between">
                     <span className="text-xs font-semibold uppercase tracking-wider text-[var(--brand-orange)]">
                       {event.date}

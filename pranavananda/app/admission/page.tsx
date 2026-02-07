@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "Admission | Pranavananda International School",
@@ -17,6 +19,15 @@ export default function AdmissionPage() {
         school office for detailed admission procedures, fee structure and
         required documents.
       </p>
+      <Image
+  src="/first%20pop%20image.jpg"
+  alt="Admission poster"
+  width={1000}
+  height={600}
+  style={{ width: "100%", height: "auto", borderRadius: "12px" }}
+/>
+
+
     </div>
   );
 }
