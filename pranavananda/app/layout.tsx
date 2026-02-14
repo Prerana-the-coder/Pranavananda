@@ -16,15 +16,20 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+
+  export const metadata: Metadata = {
   title: {
     default: "Pranavananda International School",
     template: "%s | Pranavananda International School",
   },
   description:
-    "An educational institution of Bharat Sevashram Sangha, imparting present-day education blended with high moral values, strict discipline and a holistic approach to physical, mental, intellectual and spiritual growth.",
-  keywords: ["school", "education", "Gurugram", "CBSE", "Pranavananda", "Bharat Sevashram Sangha"],
+    "An educational institution of Bharat Sevashram Sangha...",
+  keywords: ["school", "education", "Gurugram", "CBSE", "Pranavananda"],
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
+
 
 export default function RootLayout({
   children,

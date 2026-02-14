@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "Ashram | Pranavananda International School",
@@ -10,6 +12,14 @@ export default function AshramPage() {
       <h1 className="text-3xl font-semibold tracking-tight text-[var(--fg)] sm:text-4xl">
         Ashram
       </h1>
+        <Image
+          src="/ashram.jpg"
+          alt="Ashram"
+          width={400}
+          height={200}
+          className="rounded-xl my-6"
+        /                        >
+
       <p className="max-w-3xl text-sm leading-relaxed text-[var(--muted)] sm:text-base">
         Bharat Sevashram Sangha, founded by Acharya Srimat Swami
         Pranavanandaji Maharaj, tirelessly strives for spiritual upliftment and

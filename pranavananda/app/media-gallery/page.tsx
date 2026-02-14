@@ -6,12 +6,12 @@ export const metadata: Metadata = {
 };
 
 const images = [
-  "/media-1.svg",
-  "/media-2.svg",
-  "/media-3.svg",
-  "/media-4.svg",
-  "/media-5.svg",
-  "/media-6.svg",
+  "/image1.jpg",
+  "/image.jpg",
+  "/image3.jpg",
+  "/image4.jpg",
+  "/image5.jpg",
+  "/image6.jpg",
 ];
 
 export default function MediaGalleryPage() {

@@ -44,6 +44,7 @@ export default function Header() {
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3 group">
+          
             <motion.div
               whileHover={{ scale: 1.05, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
@@ -51,11 +52,11 @@ export default function Header() {
             >
               <Image
                 src="/logo.jpg"
-                alt="Pranavananda logo"
+                alt="School logo"
                 width={48}
                 height={48}
                 priority
-                className="object-cover"
+                className="object-contain"
               />
             </motion.div>
             <div className="flex flex-col">
