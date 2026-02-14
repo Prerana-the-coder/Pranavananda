@@ -50,7 +50,7 @@ export default function Header() {
               className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--brand-orange)] to-[var(--brand-orange-dark)] text-xl font-bold text-white shadow-md transition-shadow group-hover:shadow-lg overflow-hidden"
             >
               <Image
-                src="/logo.pngfffffffffz"
+                src="/logo.jpg"
                 alt="Pranavananda logo"
                 width={48}
                 height={48}

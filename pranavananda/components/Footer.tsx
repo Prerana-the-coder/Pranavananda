@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
+
 
 const footerLinks = {
   quickLinks: [
@@ -39,10 +41,16 @@ export default function Footer() {
               transition={{ delay: 0.1 }}
               className="space-y-4"
             >
-              <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--brand-orange)] to-[var(--brand-orange-dark)] text-xl font-bold text-white shadow-md">
-                  P
-                </div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl overflow-hidden">
+               <Image
+                  src="/logo.jpg"
+                  alt="School Logo"
+                  width={48}
+                  height={48}
+                  className="object-cover"
+                />
+              </div>
+
                 <div className="flex flex-col">
                   <span className="text-lg font-bold text-[var(--fg)] leading-tight">
                     Pranavananda
@@ -51,13 +59,14 @@ export default function Footer() {
                     International School
                   </span>
                 </div>
-              </div>
-              <p className="text-sm leading-relaxed text-[var(--muted)]">
-                Man-Making Education in a modern, spiritual campus. Imparting
-                present-day education blended with high moral values and strict
-                discipline.
-              </p>
-            </motion.div>
+              
+               <p className="text-sm leading-relaxed text-[var(--muted)]">
+                    Man-Making Education in a modern, spiritual campus. Importing
+                    present-day education blended with high moral values and strict discipline.
+                  </p>
+                </motion.div>
+
+              
 
             {/* Quick Links */}
             <motion.div

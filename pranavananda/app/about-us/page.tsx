@@ -1,4 +1,7 @@
+import { div } from "framer-motion/m";
 import type { Metadata } from "next";
+import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "About Us | Pranavananda International School",
@@ -49,9 +52,23 @@ export default function AboutUsPage() {
             dignified and meaningful life across the globe.
           </p>
         </div>
+        <div className="w-full mt-8">
+          <Image
+            src="/slogan.jpg"
+            alt="School slogan"
+            width={1400}
+            height={300}
+            className="w-full h-auto rounded-xl object-cover"
+          />
+        </div>
       </section>
     </div>
+
   );
 }
 
 
+
+
+
+  
